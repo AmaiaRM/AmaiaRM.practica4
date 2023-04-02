@@ -1,0 +1,5 @@
+[
+    { "name": "Hotel des Grandes Écoles", "id": "ecoles.json" },
+    { "name": "Hotel du Jeu de Paume", "id": "paume.json" },
+    { "name": "Hôtel des Nations Saint-Germain", "id": "nations.json" }
+  ]

@@ -1,0 +1,10 @@
+[
+  {"name": "Île de la Cité", "id": "cite.json"},
+  {"name": "Île Saint-Louis", "id": "saint-louis.json"},
+  {"name": "Barrio Latino", "id": "latino.json"},
+  {"name": "Montmartre", "id": "montmartre.json"},
+  {"name": "La Defensa", "id": "defensa.json"},
+  {"name": "Campos Elíseos", "id": "eliseos.json"},
+  {"name": "Plaza de la Concordia", "id": "concordia.json"},
+  {"name": "Le Marais", "id": "marais.json"}
+]

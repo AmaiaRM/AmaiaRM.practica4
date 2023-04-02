@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuda</title>
+    <link rel="stylesheet" href="estilos_ayuda.css">
+
+</head>
+<body>
+    <h1>PARIS</h1>
+    <h2>LA CIUDAD DE LA LUZ</h2>
+	<p>París es la capital de Francia y una de las ciudades
+		 más bellas del mundo. Conocida como la Ciudad de la
+		  Luz, es un destino turístico popular para personas
+          de todo el mundo.
+        </p> 
+	<nav>
+		<a href="index.html">Inicio</a>
+		<a href="lugares.html">Lugares de interés</a>
+        <a href="trucos.html">Trucos y recomendaciones</a>
+        <a href="alojamiento.html">Alojamiento</a>
+		<a href="ayuda.html">¿Ayuda?</a>
+	</nav>
+    <h1>Danos tu opinión</h1>
+    <h2>Cualquier sugerencia es bienvenida</h2>
+    <p>Si tienes alguna recomendación sobre la ciudad,
+         no opinas lo mismo que nosotros o simplemente
+          quieres darnos tu feedback, no dudes en completar
+           el formulario. ¡Tu intervención nos es de gran
+            ayuda!</p>
+    <form action="#" th:action="@{/ayuda.html}" method="post">
+
+                <fieldset>
+                 <legend>Datos personales</legend>
+                 <p>
+                  <label for="name_id">Nombre:</label><br>
+                  <input type="text" id="name_id" name="nombre" th:value="!${exito}? ${ayuda.nombre}">
+                 </p>
+                 <p>
+                  <label for="phone_id">Teléfono:</label><br>
+                  <input type="tel" id="phone_id" name="telefono" th:value="!${exito}? ${ayuda.tlfn}">
+                 </p>
+                 <p>
+                  <label for="email_id">Email:</label><br>
+                  <input type="email" id="email_id" name="email" th:value="!${exito}? ${ayuda.email}">                 </p>
+                </fieldset>
+                <fieldset>
+                 <legend>Tu opinión</legend>
+                 
+                 <p>¿Qué te ha parecido la web?
+                  <ul>
+                   <li>
+                    <input type="radio" id="gusta" name="opinion" value="me_gusta" required>
+                    <label for="gusta">Me ha encantado</label>
+                   </li>
+                   <li>
+                    <input type="radio" id="mejorar" name="opinion" value="mejorar" required>
+                    <label for="mejorar">Se puede mejorar</label>
+                   </li>
+                   <li>
+                    <input type="radio" id="no_gusta" name="opinion" value="no_gusta" required>
+                    <label for="no_gusta">No me gusta</label>
+                   </li>
+                  </ul>
+                 </p>
+                 <p>
+                    <label for="mensaje">Danos tu feedback:</label><br>
+                    <textarea id="mensaje" name="mensaje" th:value="!${exito}? ${ayuda.mensaje}" rows="7" cols="65"></textarea>></textarea>
+                 </p>                 
+                </fieldset>
+                <button type="submit">Enviar</button>
+            </form>
+            <ul th:if="!${exito}">
+                <li th:each="err : ${#fields.errors('ayuda.*')}" th:text="${err}"></li>
+            </ul>
+            <p th:if="${exito}" th:text="${exito}"></p>
+
+      
+</body>
+</html>

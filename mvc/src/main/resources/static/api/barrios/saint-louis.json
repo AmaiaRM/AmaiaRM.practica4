@@ -1,0 +1,6 @@
+[
+    
+        { "name": "Hotel de Lutèce", "id": "lutece.json" },
+        { "name": "Hôtel des Deux Îles", "id": "deux-iles.json" },
+        { "name": "La villa Saint Germain des Prés", "id": "villa.json" }     
+]
